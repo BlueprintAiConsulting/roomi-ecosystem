@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROOMI Ecosystem</title>
-  <meta name="description" content="ROOMI Ecosystem — A dignity-first support system for Individuals, Anchors, and Networks">
+  <title>ROOMI Universe</title>
+  <meta name="description" content="ROOMI Universe — A dignity-first support system for Individuals, Anchors, and Networks">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,9 +43,15 @@
     body {
       font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
       background: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 95%, #181d45 0%, #010206 50%);
       color: var(--text-primary);
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    @keyframes neon-shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
     }
 
     /* ── Cosmic Background ── */
@@ -169,7 +175,7 @@
     /* ── Header ── */
     .header {
       text-align: center;
-      margin-bottom: 90px;
+      margin-bottom: 72px;
       position: relative;
       z-index: 2;
     }
@@ -178,11 +184,14 @@
       font-size: 2.4rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--amber-light), var(--amber), var(--gold));
+      background: linear-gradient(to right, var(--cyan-light), var(--magenta), var(--amber-light), var(--cyan), var(--rose-light), var(--cyan-light));
+      background-size: 200% auto;
+      animation: neon-shimmer 6s linear infinite;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 8px;
-      text-shadow: 0 0 40px rgba(245,166,35,0.3);
+      filter: drop-shadow(0 0 16px rgba(217,70,239,0.35));
     }
     .header p {
       font-size: 0.95rem;
@@ -200,7 +209,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 110px;
+      margin-bottom: 90px;
     }
     .tier-label {
       display: inline-flex;
@@ -493,11 +502,11 @@
       border: 1px solid rgba(190,150,255,0.62);
       box-shadow:
         0 0 0 1px rgba(200,160,255,0.06),
-        0 0 20px rgba(180,130,255,0.48),
-        0 0 60px rgba(155,114,207,0.18),
-        0 4px 60px rgba(0,0,0,0.92),
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        inset 0 -1px 0 rgba(180,130,255,0.16);
+        0 0 16px rgba(180,130,255,0.36),
+        0 0 44px rgba(155,114,207,0.14),
+        0 4px 50px rgba(0,0,0,0.92),
+        inset 0 1px 0 rgba(255,255,255,0.10),
+        inset 0 -1px 0 rgba(180,130,255,0.12);
     }
 
     /* Rotating conic aura — masked to outer ring only, no interior wash */
@@ -526,7 +535,7 @@
       animation: spin 10s linear infinite;
       pointer-events: none;
       filter: blur(0px);
-      opacity: 0.28;
+      opacity: 0.20;
       -webkit-mask-image: radial-gradient(circle, transparent 83%, black 100%);
       mask-image: radial-gradient(circle, transparent 83%, black 100%);
     }
@@ -605,7 +614,9 @@
       position: relative; z-index: 2;
       font-size: 1.9rem; font-weight: 800;
       letter-spacing: 0.22em;
-      background: linear-gradient(135deg, var(--amber-light) 0%, #fff4d8 28%, var(--violet-light) 60%, #dcc8ff 100%);
+      background: linear-gradient(to right, var(--violet-light) 0%, #dcc8ff 20%, var(--magenta) 40%, var(--cyan-light) 60%, var(--amber-light) 80%, var(--violet-light) 100%);
+      background-size: 200% auto;
+      animation: neon-shimmer 5s linear infinite;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -669,12 +680,17 @@
       background: linear-gradient(90deg, transparent, rgba(91,155,213,0.32), transparent);
     }
     .gov-divider .label {
-      font-size: 0.58rem; font-weight: 500;
+      font-size: 0.68rem; font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--blue-light);
+      background: linear-gradient(to right, var(--blue-light), var(--cyan), var(--magenta), var(--cyan-light), var(--blue-light));
+      background-size: 200% auto;
+      animation: neon-shimmer 4.5s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       white-space: nowrap;
-      opacity: 0.85;
+      opacity: 0.95;
     }
 
     /* Board pair grid */
@@ -719,12 +735,12 @@
     }
 
     .b-icon {
-      width: 28px; height: 28px;
-      margin: 0 auto 5px;
-      border-radius: 8px;
+      width: 38px; height: 38px;
+      margin: 0 auto 6px;
+      border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
     }
-    .b-icon svg { width: 14px; height: 14px; }
+    .b-icon svg { width: 22px; height: 22px; }
 
     .b-icon.ic-ledger { background: rgba(245,190,70,0.16); border: 1px solid rgba(245,190,70,0.28); box-shadow: 0 0 8px rgba(245,190,70,0.08); }
     .b-icon.ic-ledger svg { fill: #f5c846; }
@@ -739,23 +755,52 @@
     .b-icon.ic-echo { background: rgba(160,140,220,0.16); border: 1px solid rgba(160,140,220,0.28); box-shadow: 0 0 8px rgba(160,140,220,0.08); }
     .b-icon.ic-echo svg { fill: #b4a0e0; }
 
+    /* Human avatars — color-paired to their digital counterpart */
     .b-icon.ic-human {
-      background: rgba(91,155,213,0.10);
-      border: 1px solid rgba(91,155,213,0.20);
       border-radius: 50%;
     }
-    .b-icon.ic-human svg { fill: var(--blue-light); opacity: 0.80; }
+    .b-icon.ic-human svg { opacity: 0.85; }
+    .b-icon.ic-human-ledger {
+      background: rgba(245,190,70,0.10); border: 1.5px solid rgba(245,190,70,0.35);
+      box-shadow: 0 0 8px rgba(245,190,70,0.10);
+    }
+    .b-icon.ic-human-ledger svg { fill: #f5c846; }
+    .b-icon.ic-human-beacon {
+      background: rgba(232,120,100,0.10); border: 1.5px solid rgba(232,120,100,0.35);
+      box-shadow: 0 0 8px rgba(232,120,100,0.10);
+    }
+    .b-icon.ic-human-beacon svg { fill: #e8846a; }
+    .b-icon.ic-human-guardian {
+      background: rgba(150,180,220,0.10); border: 1.5px solid rgba(150,180,220,0.35);
+      box-shadow: 0 0 8px rgba(150,180,220,0.10);
+    }
+    .b-icon.ic-human-guardian svg { fill: #a0bce0; }
+    .b-icon.ic-human-circuit {
+      background: rgba(130,200,255,0.10); border: 1.5px solid rgba(130,200,255,0.35);
+      box-shadow: 0 0 8px rgba(130,200,255,0.10);
+    }
+    .b-icon.ic-human-circuit svg { fill: #82c8ff; }
+    .b-icon.ic-human-horizon {
+      background: rgba(245,180,100,0.10); border: 1.5px solid rgba(245,180,100,0.35);
+      box-shadow: 0 0 8px rgba(245,180,100,0.10);
+    }
+    .b-icon.ic-human-horizon svg { fill: #f5b464; }
+    .b-icon.ic-human-echo {
+      background: rgba(160,140,220,0.10); border: 1.5px solid rgba(160,140,220,0.35);
+      box-shadow: 0 0 8px rgba(160,140,220,0.10);
+    }
+    .b-icon.ic-human-echo svg { fill: #b4a0e0; }
 
     .b-name {
-      font-size: 0.62rem; font-weight: 600;
-      color: rgba(237,233,224,0.93);
-      margin-bottom: 1px;
+      font-size: 0.75rem; font-weight: 600;
+      color: rgba(237,233,224,0.95);
+      margin-bottom: 2px;
       letter-spacing: 0.02em;
       line-height: 1.3;
     }
     .b-role {
-      font-size: 0.5rem;
-      color: rgba(237,233,224,0.45);
+      font-size: 0.60rem;
+      color: rgba(237,233,224,0.55);
       font-weight: 400;
       line-height: 1.3;
     }
@@ -787,7 +832,7 @@
       display: flex; align-items: center;
       justify-content: center;
       flex-wrap: wrap; gap: 18px;
-      margin-top: 56px;
+      margin-top: 72px;
       padding: 10px 20px;
       border-radius: 12px;
       background: rgba(10,13,26,0.90);
@@ -796,12 +841,12 @@
     .leg {
       display: flex; align-items: center;
       gap: 6px;
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       color: var(--text-secondary);
       font-weight: 400;
     }
     .leg .dot {
-      width: 7px; height: 7px;
+      width: 8px; height: 8px;
       border-radius: 50%;
     }
     .leg .dot.d1 { background: var(--amber); box-shadow: 0 0 6px var(--amber-glow); }
@@ -809,140 +854,227 @@
     .leg .dot.d3 { background: var(--cyan); box-shadow: 0 0 6px var(--cyan-glow); }
     .leg .dot.dh { background: var(--violet); box-shadow: 0 0 6px var(--violet-glow); }
     .leg .ln {
-      width: 22px; height: 0;
+      width: 26px; height: 0;
     }
     .leg .ln.solid { border-top: 2px solid var(--amber); }
     .leg .ln.dashed { border-top: 2px dashed rgba(91,155,213,0.5); }
 
     .footer {
       text-align: center;
-      margin-top: 12px;
-      font-size: 0.64rem;
+      margin-top: 24px;
+      font-size: 0.80rem;
       color: var(--text-muted);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       font-weight: 300;
       position: relative;
       z-index: 2;
     }
 
-    /* ── Founder AI Agents Bar ── */
-    .founder-bar {
+    /* ── Founding Executive Council ── */
+    .founding-council {
       position: relative;
       z-index: 2;
-      margin-top: 32px;
-      padding: 14px 24px;
-      text-align: center;
-      border-radius: 14px;
-      background: rgba(10,13,26,0.88);
-      border: 1px solid rgba(155,114,207,0.22);
+      margin-top: 64px;
     }
-    .founder-bar .fb-title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: rgba(220,200,255,0.90);
-      margin-bottom: 3px;
+    .council-divider {
+      display: flex; align-items: center;
+      gap: 10px; margin-bottom: 24px;
     }
-    .founder-bar .fb-sub {
-      font-size: 0.58rem;
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      color: rgba(237,233,224,0.45);
+    .council-divider .line {
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(245,200,100,0.25), transparent);
     }
-
-    /* ── People Figures Section ── */
-    .people-section {
-      position: relative;
-      z-index: 2;
-      margin-top: 56px;
-      text-align: center;
-    }
-    .people-section img {
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      -webkit-mask-image: linear-gradient(to bottom,
-        transparent 0%,
-        black 8%,
-        black 75%,
-        transparent 100%
-      ), linear-gradient(to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-      );
-      -webkit-mask-composite: destination-in;
-      mask-image: linear-gradient(to bottom,
-        transparent 0%,
-        black 8%,
-        black 75%,
-        transparent 100%
-      ), linear-gradient(to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-      );
-      mask-composite: intersect;
-      opacity: 0.85;
-    }
-    .people-label {
-      margin-top: 12px;
+    .council-divider .label {
       font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.10em;
-      color: rgba(237,233,224,0.40);
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      background: linear-gradient(to right, var(--amber-soft), var(--magenta), var(--cyan-light), var(--gold), var(--amber-soft));
+      background-size: 200% auto;
+      animation: neon-shimmer 5s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .council-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .council-card {
+      background: rgba(10,13,26,0.78);
+      border: 1px solid rgba(245,200,100,0.18);
+      border-radius: 12px;
+      padding: 20px 12px 16px;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .council-card:hover {
+      border-color: rgba(245,200,100,0.35);
+      background: rgba(12,16,32,0.85);
+    }
+    .council-avatar {
+      width: 36px; height: 36px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .council-avatar.av-wade {
+      background: rgba(91,155,213,0.15);
+      border: 1.5px solid rgba(91,155,213,0.40);
+      color: rgba(91,155,213,0.90);
+    }
+    .council-avatar.av-drew {
+      background: rgba(78,205,196,0.15);
+      border: 1.5px solid rgba(78,205,196,0.40);
+      color: rgba(78,205,196,0.90);
+    }
+    .council-avatar.av-cassie {
+      background: rgba(217,70,239,0.15);
+      border: 1.5px solid rgba(217,70,239,0.40);
+      color: rgba(217,70,239,0.90);
+    }
+    .council-name {
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .council-role {
+      font-size: 0.68rem; font-weight: 400;
+      color: var(--text-secondary);
+    }
+    .council-support {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+    }
+    .council-support .cs-name {
+      font-size: 0.65rem; font-weight: 500;
+      color: rgba(180,180,200,0.85);
+    }
+    .council-support .cs-role {
+      font-size: 0.55rem; font-weight: 300;
+      color: rgba(237,233,224,0.55);
+      margin-bottom: 2px;
+    }
+    .council-card:nth-child(2) .council-support {
+      border-top-color: rgba(78,205,196,0.15);
+    }
+    .council-card:nth-child(2) .council-support .cs-name {
+      color: rgba(78,205,196,0.60);
+    }
+    .council-card:nth-child(3) .council-support {
+      border-top-color: rgba(217,70,239,0.15);
+    }
+    .council-card:nth-child(3) .council-support .cs-name {
+      color: rgba(217,70,239,0.60);
     }
 
     /* ── Responsive — Layout ── */
     @media (max-width: 820px) {
+      html, body { overflow-x: hidden; }
+      .eco-map { padding: 64px 18px 100px; }
       .support-wings { grid-template-columns: 1fr; gap: 14px; }
-      .board-pairs { grid-template-columns: repeat(3, 1fr); }
-      .header h1 { font-size: 1.6rem; letter-spacing: 0.14em; }
+      .board-pairs { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .header h1 { font-size: 1.5rem; letter-spacing: 0.10em; }
+      .header p { font-size: 0.82rem; }
       .hub-core { padding: 32px 22px 24px; }
+      .hub-name { font-size: 1.4rem; letter-spacing: 0.12em; }
+      .hub-role { font-size: 0.72rem; }
+      .hub-emblem { width: 70px; height: 70px; }
+      .hub-emblem::before { width: 140px; }
+      .hub-emblem::after { height: 100px; }
+      .hub-rays { display: none; }
+      .council-grid { gap: 10px; }
+      .council-card { padding: 16px 10px 12px; }
+      .council-name { font-size: 0.78rem; }
+      .council-role { font-size: 0.62rem; }
+      .council-support .cs-name { font-size: 0.58rem; }
+      .council-support .cs-role { font-size: 0.50rem; }
+      .tier-individual { margin-bottom: 60px; }
+      .tier-individual::before { width: 300px; height: 150px; }
+      .hub-zone { margin: 0 0 60px; }
+      .founding-council { margin-top: 44px; }
+      .legend { margin-top: 48px; gap: 12px; padding: 8px 14px; }
+      .leg { font-size: 0.65rem; }
+      .footer { font-size: 0.70rem; }
     }
+
     @media (max-width: 520px) {
-      .board-pairs { grid-template-columns: repeat(2, 1fr); }
+      .eco-map { padding: 48px 12px 80px; }
+      .header h1 { font-size: 1.15rem; letter-spacing: 0.08em; }
+      .header p { font-size: 0.75rem; }
+      .header { margin-bottom: 48px; }
+      .board-pairs { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+      .b-name { font-size: 0.62rem; }
+      .b-role { font-size: 0.50rem; }
+      .b-icon { width: 32px; height: 32px; margin: 0 auto 4px; }
+      .b-card { padding: 8px 4px 6px; border-radius: 8px; }
+      .pair-link { height: 14px; }
       .hub-facets { flex-direction: column; align-items: center; }
-      .orb-container { width: 140px; height: 140px; }
-      .orb-ring.r1 { width: 140px; height: 140px; }
-      .orb-ring.r2 { width: 110px; height: 110px; }
-      .orb-ring.r3 { width: 80px; height: 80px; }
+      .hub-facet { font-size: 0.62rem; padding: 5px 12px; }
+      .hub-name { font-size: 1.1rem; letter-spacing: 0.08em; }
+      .hub-emblem { width: 60px; height: 60px; margin: 0 auto 14px; }
+      .hub-emblem svg { width: 28px; height: 28px; }
+      .hub-emblem::before { width: 110px; }
+      .hub-emblem::after { height: 80px; }
+      .orb-container { width: 120px; height: 120px; margin-bottom: 18px; }
+      .orb-container::before { width: 180px; height: 180px; }
+      .orb-ring.r1 { width: 120px; height: 120px; }
+      .orb-ring.r2 { width: 95px; height: 95px; }
+      .orb-ring.r3 { width: 70px; height: 70px; }
+      .orb-core { width: 50px; height: 50px; }
+      .council-grid { grid-template-columns: 1fr; gap: 10px; }
+      .council-card { padding: 18px 16px 14px; }
+      .council-avatar { width: 42px; height: 42px; font-size: 0.8rem; }
+      .council-name { font-size: 0.88rem; }
+      .council-role { font-size: 0.70rem; }
+      .council-support .cs-name { font-size: 0.65rem; }
+      .council-support .cs-role { font-size: 0.58rem; }
+      .gov-divider .label { font-size: 0.58rem; }
+      .council-divider .label { font-size: 0.58rem; }
+      .wing { padding: 16px 14px 12px; }
+      .wing-title { font-size: 0.82rem; }
+      .wing-desc { font-size: 0.68rem; }
+      .w-tag { font-size: 0.58rem; padding: 2px 8px; }
+      .tier-label { font-size: 0.56rem; }
+      .legend { flex-direction: column; gap: 8px; align-items: flex-start; padding: 12px 16px; }
+      .leg { font-size: 0.62rem; }
+      .footer { font-size: 0.65rem; }
+    }
+
+    @media (max-width: 375px) {
+      .header h1 { font-size: 1.0rem; letter-spacing: 0.06em; }
+      .hub-name { font-size: 0.95rem; }
+      .board-pairs { gap: 4px; }
+      .b-name { font-size: 0.56rem; }
+      .b-role { font-size: 0.46rem; }
+      .b-icon { width: 28px; height: 28px; border-radius: 6px; }
     }
 
     /* ── Mobile Performance — kill GPU-expensive effects ── */
     @media (max-width: 820px) {
-      /* Remove costly backdrop-filter everywhere */
       .wing, .b-card.digital, .legend {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
       }
-      /* Hide 5 of 8 CSS nebula layers — keep only n1/n4/n5 */
       .nebula.n2, .nebula.n3, .nebula.n6, .nebula.n7, .nebula.n8 { display: none; }
-      /* Reduce blur on remaining layers */
       .nebula.n1 { filter: blur(40px); opacity: 0.55; }
       .nebula.n4 { filter: blur(50px); opacity: 0.55; }
       .nebula.n5 { filter: blur(35px); opacity: 0.45; }
-      /* Disable hub rays entirely */
-      .hub-rays { display: none; }
-      /* Stop non-essential animations */
       .hub-aura { animation: none; }
       .hub-aura::after { animation: none; }
       .orb-container::after { animation: none; }
       .orb-ring.r2, .orb-ring.r3 { animation: none; opacity: 0.4; }
       .tier-individual::before { animation: none; }
-      /* Hide painted nebula canvas — CSS layers handle atmosphere */
       #nebula-canvas { display: none; }
-      /* Stop hub emblem and orb core animations */
       .hub-emblem,
       .hub-emblem::before,
       .hub-emblem::after,
       .orb-core { animation: none !important; }
-      /* Simplify hub card background — no complex radial */
       .hub-core {
         background: rgba(20, 12, 45, 0.97);
         border-color: rgba(180,130,255,0.25);
@@ -979,7 +1111,7 @@
 
   <!-- ── HEADER ── -->
   <header class="header">
-    <h1>ROOMI Ecosystem</h1>
+    <h1>ROOMI Universe</h1>
     <p>A dignity-first support system for Individuals, Anchors, and Networks</p>
   </header>
 
@@ -1086,15 +1218,32 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-ledger">
-            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+            <img src="ledger_upscaled_lossless.webp" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Ledger</div>
           <div class="b-role">Finance Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-ledger">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <radialGradient id="tg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#fff7d4"/><stop offset="40%" stop-color="#f5c846"/><stop offset="100%" stop-color="#a87c10"/></radialGradient>
+                <filter id="tgl"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#1a1508" stroke="#f5c846" stroke-width="0.8" opacity="0.6"/>
+              <circle cx="24" cy="24" r="18" fill="none" stroke="#f5c846" stroke-width="0.4" opacity="0.25"/>
+              <rect x="9" y="30" width="5.5" height="10" rx="1.5" fill="url(#tg)" filter="url(#tgl)"/>
+              <rect x="17" y="24" width="5.5" height="16" rx="1.5" fill="url(#tg)" filter="url(#tgl)" opacity="0.9"/>
+              <rect x="25" y="17" width="5.5" height="23" rx="1.5" fill="url(#tg)" filter="url(#tgl)" opacity="0.8"/>
+              <rect x="33" y="10" width="5.5" height="30" rx="1.5" fill="url(#tg)" filter="url(#tgl)" opacity="0.7"/>
+              <path d="M11.5 28 L20 21 L28 14 L36 8" fill="none" stroke="#fff7d4" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.6"/>
+              <circle cx="11.5" cy="28" r="1.8" fill="#fff7d4" opacity="0.9"/>
+              <circle cx="20" cy="21" r="1.8" fill="#fff7d4" opacity="0.9"/>
+              <circle cx="28" cy="14" r="1.8" fill="#fff7d4" opacity="0.9"/>
+              <circle cx="36" cy="8" r="1.8" fill="#fff7d4" opacity="0.9"/>
+              <text x="24" y="46" text-anchor="middle" fill="#f5c846" font-size="3.5" font-weight="700" letter-spacing="0.3" opacity="0.5">$</text>
+            </svg>
           </div>
           <div class="b-name">Treasurer</div>
           <div class="b-role">↔ Ledger</div>
@@ -1105,15 +1254,29 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-beacon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <img src="beacon-icon.png" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Beacon</div>
           <div class="b-role">Fundraising Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-beacon">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <radialGradient id="bg" cx="50%" cy="35%" r="60%"><stop offset="0%" stop-color="#ffe0d4"/><stop offset="45%" stop-color="#e8846a"/><stop offset="100%" stop-color="#8c3020"/></radialGradient>
+                <filter id="bgl"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#1a0d08" stroke="#e8846a" stroke-width="0.8" opacity="0.6"/>
+              <circle cx="24" cy="24" r="18" fill="none" stroke="#e8846a" stroke-width="0.4" opacity="0.2"/>
+              <path d="M24 40l-2.8-2.5C13 30.5 8 26 8 20.2c0-4.7 3.7-8.5 8.3-8.5 2.6 0 5.1 1.2 7.7 3.6 2.6-2.4 5.1-3.6 7.7-3.6C36.3 11.7 40 15.5 40 20.2c0 5.8-5 10.3-13.2 17.3L24 40z" fill="url(#bg)" filter="url(#bgl)"/>
+              <path d="M24 38l-2.4-2.2C14 29 10 25 10 20.2c0-3.8 3-6.8 6.7-6.8 2.1 0 4.3 1 7.3 3.2 3-2.2 5.2-3.2 7.3-3.2 3.7 0 6.7 3 6.7 6.8 0 4.8-4 8.8-11.6 15.6L24 38z" fill="none" stroke="#ffe0d4" stroke-width="0.8" opacity="0.4"/>
+              <circle cx="20" cy="22" r="1.2" fill="#fff" opacity="0.7"/>
+              <circle cx="28" cy="22" r="1.2" fill="#fff" opacity="0.7"/>
+              <path d="M20 26 Q24 30 28 26" fill="none" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <path d="M24 12 L24 8" stroke="#e8846a" stroke-width="1.2" opacity="0.4"/>
+              <circle cx="24" cy="7" r="1.5" fill="#e8846a" filter="url(#bgl)" opacity="0.6"/>
+            </svg>
           </div>
           <div class="b-name">Fundraising Chair</div>
           <div class="b-role">↔ Beacon</div>
@@ -1124,15 +1287,30 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-guardian">
-            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <img src="guardian_upscaled_lossless.webp" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Guardian</div>
           <div class="b-role">Legal Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-guardian">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4e4ff"/><stop offset="50%" stop-color="#a0bce0"/><stop offset="100%" stop-color="#506880"/></linearGradient>
+                <filter id="ggl"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#0a0f1a" stroke="#a0bce0" stroke-width="0.8" opacity="0.6"/>
+              <path d="M24 4L7 11v12c0 10.2 7.2 19.8 17 22 9.8-2.2 17-11.8 17-22V11L24 4z" fill="url(#gg)" filter="url(#ggl)" opacity="0.2"/>
+              <path d="M24 6L9 12v11c0 9.4 6.5 18 15 20 8.5-2 15-10.6 15-20V12L24 6z" fill="none" stroke="url(#gg)" stroke-width="1.5"/>
+              <path d="M24 10L13 15v8.5c0 6.8 4.8 13 11 14.5 6.2-1.5 11-7.7 11-14.5V15L24 10z" fill="none" stroke="#a0bce0" stroke-width="0.6" opacity="0.4"/>
+              <rect x="18" y="19" width="12" height="8" rx="1" fill="none" stroke="#d4e4ff" stroke-width="1.2" opacity="0.8"/>
+              <path d="M18 22 L24 25 L30 22" fill="none" stroke="#d4e4ff" stroke-width="1" opacity="0.6"/>
+              <circle cx="24" cy="15" r="3" fill="#d4e4ff" opacity="0.8"/>
+              <path d="M21 15 L24 12 L27 15" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.5"/>
+              <path d="M15 30h18" stroke="#a0bce0" stroke-width="0.6" stroke-dasharray="1.5 2" opacity="0.35"/>
+              <path d="M18 33h12" stroke="#a0bce0" stroke-width="0.6" stroke-dasharray="1.5 2" opacity="0.25"/>
+            </svg>
           </div>
           <div class="b-name">Legal Advisor</div>
           <div class="b-role">↔ Guardian</div>
@@ -1143,15 +1321,36 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-circuit">
-            <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7V7zm12-2h-2V3h-2v2h-2V3h-2v2h-2V3H7v2H5c-1.1 0-2 .9-2 2v2h2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v-2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h-2v-2h2v-2h-2V9h2V7c0-1.1-.9-2-2-2zm0 14H5V7h14v12z"/></svg>
+            <img src="circuit_upscaled_lossless.webp" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Circuit</div>
           <div class="b-role">Technology Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-circuit">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <radialGradient id="cg" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#d4f0ff"/><stop offset="40%" stop-color="#82c8ff"/><stop offset="100%" stop-color="#2a5a8a"/></radialGradient>
+                <filter id="cgl"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#060d1a" stroke="#82c8ff" stroke-width="0.8" opacity="0.6"/>
+              <rect x="10" y="10" width="28" height="28" rx="4" fill="url(#cg)" opacity="0.12"/>
+              <rect x="10" y="10" width="28" height="28" rx="4" fill="none" stroke="url(#cg)" stroke-width="1.2"/>
+              <rect x="15" y="15" width="18" height="18" rx="2" fill="none" stroke="#82c8ff" stroke-width="0.6" opacity="0.45"/>
+              <path d="M3 20h7M3 28h7M38 20h7M38 28h7M20 3v7M28 3v7M20 38v7M28 38v7" stroke="#82c8ff" stroke-width="1.8" stroke-linecap="round" filter="url(#cgl)"/>
+              <circle cx="24" cy="24" r="5" fill="url(#cg)" filter="url(#cgl)"/>
+              <circle cx="24" cy="24" r="3" fill="#d4f0ff" opacity="0.6"/>
+              <path d="M24 19v-4M24 33v-4M19 24h-4M33 24h-4" stroke="#d4f0ff" stroke-width="0.8" opacity="0.5"/>
+              <circle cx="10" cy="20" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="10" cy="28" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="38" cy="20" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="38" cy="28" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="20" cy="10" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="28" cy="10" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="20" cy="38" r="1.5" fill="#82c8ff" opacity="0.5"/>
+              <circle cx="28" cy="38" r="1.5" fill="#82c8ff" opacity="0.5"/>
+            </svg>
           </div>
           <div class="b-name">Tech Lead</div>
           <div class="b-role">↔ Circuit</div>
@@ -1162,15 +1361,31 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-horizon">
-            <svg viewBox="0 0 24 24"><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+            <img src="horizon.png" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Horizon</div>
           <div class="b-role">IDD Services Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-horizon">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <radialGradient id="hg" cx="50%" cy="38%" r="58%"><stop offset="0%" stop-color="#ffe4c4"/><stop offset="40%" stop-color="#f5b464"/><stop offset="100%" stop-color="#8a5a1a"/></radialGradient>
+                <filter id="hgl"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#1a1208" stroke="#f5b464" stroke-width="0.8" opacity="0.6"/>
+              <circle cx="24" cy="24" r="18" fill="none" stroke="#f5b464" stroke-width="0.4" opacity="0.2"/>
+              <circle cx="24" cy="16" r="6" fill="url(#hg)" filter="url(#hgl)"/>
+              <circle cx="24" cy="16" r="4" fill="#ffe4c4" opacity="0.3"/>
+              <path d="M12 34c0-5.5 5.4-10 12-10s12 4.5 12 34" fill="none" stroke="url(#hg)" stroke-width="1.5" opacity="0.6"/>
+              <path d="M14 38c0-4.5 4.5-8 10-8s10 3.5 10 8" fill="url(#hg)" filter="url(#hgl)" opacity="0.5"/>
+              <path d="M40 26a16 16 0 0 1-32 0" fill="none" stroke="#f5b464" stroke-width="1.8" stroke-linecap="round" filter="url(#hgl)" opacity="0.7"/>
+              <circle cx="12" cy="24" r="1.5" fill="#ffe4c4" opacity="0.6"/>
+              <circle cx="36" cy="24" r="1.5" fill="#ffe4c4" opacity="0.6"/>
+              <path d="M18 28h12" stroke="#ffe4c4" stroke-width="0.6" stroke-dasharray="1.5 2" opacity="0.4"/>
+              <path d="M20 32h8" stroke="#ffe4c4" stroke-width="0.6" stroke-dasharray="1.5 2" opacity="0.3"/>
+            </svg>
           </div>
           <div class="b-name">Disability Services Pro</div>
           <div class="b-role">↔ Horizon</div>
@@ -1181,15 +1396,31 @@
       <div class="pair-col">
         <div class="b-card digital">
           <div class="b-icon ic-echo">
-            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+            <img src="echo_upscaled_lossless.webp" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
           </div>
           <div class="b-name">Echo</div>
           <div class="b-role">Communications Intelligence</div>
         </div>
         <div class="pair-link"><span class="link-dot"></span></div>
         <div class="b-card human">
-          <div class="b-icon ic-human">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="b-icon ic-human ic-human-echo">
+            <svg viewBox="0 0 48 48">
+              <defs>
+                <radialGradient id="eg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e8d8ff"/><stop offset="40%" stop-color="#b4a0e0"/><stop offset="100%" stop-color="#4a3080"/></radialGradient>
+                <filter id="egl"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <circle cx="24" cy="24" r="22" fill="#0d0a1a" stroke="#b4a0e0" stroke-width="0.8" opacity="0.6"/>
+              <path d="M24 5C13.5 5 5 12.5 5 22c0 4.8 2 9.2 5.5 12.5-.5 3-1.8 5.6-1.8 5.6s5.5-1.5 10-4.3c1.5.4 3.2.7 5.3.7 10.5 0 19-7.5 19-17S34.5 5 24 5z" fill="url(#eg)" filter="url(#egl)" opacity="0.18"/>
+              <path d="M24 8C15 8 8 14 8 22c0 4 1.8 7.6 4.5 10.4-.4 2.4-1.4 4.4-1.4 4.4s4.5-1.2 8.2-3.5c1.3.4 2.8.6 4.7.6 9 0 16-6 16-14S33 8 24 8z" fill="none" stroke="url(#eg)" stroke-width="1.3"/>
+              <path d="M24 12C17.5 12 12 16.5 12 22c0 2.8 1.2 5.3 3.2 7.2" fill="none" stroke="#b4a0e0" stroke-width="0.5" opacity="0.35"/>
+              <circle cx="16" cy="22" r="2.5" fill="url(#eg)" filter="url(#egl)"/>
+              <circle cx="24" cy="22" r="2.5" fill="url(#eg)" filter="url(#egl)"/>
+              <circle cx="32" cy="22" r="2.5" fill="url(#eg)" filter="url(#egl)"/>
+              <circle cx="16" cy="22" r="1.2" fill="#e8d8ff" opacity="0.7"/>
+              <circle cx="24" cy="22" r="1.2" fill="#e8d8ff" opacity="0.7"/>
+              <circle cx="32" cy="22" r="1.2" fill="#e8d8ff" opacity="0.7"/>
+              <path d="M16 22h16" stroke="#e8d8ff" stroke-width="0.4" opacity="0.3" stroke-dasharray="1 2"/>
+            </svg>
           </div>
           <div class="b-name">Communications Lead</div>
           <div class="b-role">↔ Echo</div>
@@ -1199,16 +1430,48 @@
     </div>
   </div>
 
-  <!-- ── Founder AI Agents ── -->
-  <div class="founder-bar">
-    <div class="fb-title">Founder AI Agents</div>
-    <div class="fb-sub">Hybrid AI engine · dual-role avatar</div>
+  <!-- ── Founding Executive Council ── -->
+  <div class="founding-council" id="zone-council">
+    <div class="council-divider">
+      <div class="line"></div>
+      <div class="label">Founding Executive Council</div>
+      <div class="line"></div>
+    </div>
+    <div class="council-grid">
+      <div class="council-card">
+        <div class="council-avatar av-wade">WS</div>
+        <div class="council-name">Wade Smith</div>
+        <div class="council-role">Administrative Chair</div>
+      </div>
+      <div class="council-card">
+        <div class="council-avatar av-drew">D</div>
+        <div class="council-name">Drew</div>
+        <div class="council-role">Technical Advisor Chair</div>
+        <div class="council-support">
+          <div class="cs-name">Dalton</div>
+          <div class="cs-role">Infrastructure & Security Chair</div>
+        </div>
+        <div class="council-support" style="border-top: none; margin-top: 4px; padding-top: 0;">
+          <div class="cs-name">Bree</div>
+          <div class="cs-role">QA & UI Chair</div>
+        </div>
+      </div>
+      <div class="council-card">
+        <div class="council-avatar av-cassie">C</div>
+        <div class="council-name">Cassie</div>
+        <div class="council-role">Creative Chair</div>
+        <div class="council-support">
+          <div class="cs-name">Alyssa</div>
+          <div class="cs-role">Creative Support</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- ── People Figures ── -->
-  <div class="people-section">
-    <img src="people.png" alt="The people ROOMI serves — diverse individuals connected through the ecosystem" />
-    <div class="people-label">The people ROOMI serves</div>
+  <!-- ── Founder AI Agents ── -->
+  <div class="people-section" id="zone-founders" style="margin-top: 50px; text-align: center; position: relative; z-index: 2;">
+    <div style="font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; background: linear-gradient(to right, var(--amber-soft), var(--magenta), var(--cyan-light), var(--gold), var(--amber-soft)); background-size: 200% auto; animation: neon-shimmer 5s linear infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Founder AI Agents</div>
+    <img src="people.png" alt="The 6 Founder AI Agents" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 85%); mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 85%);">
   </div>
 
   <!-- ── Legend ── -->
@@ -1221,7 +1484,7 @@
     <div class="leg"><span class="ln dashed"></span> Governance</div>
   </div>
 
-  <div class="footer">ROOMI · Dignity-First Ecosystem</div>
+  <div class="footer">ROOMI · Dignity-First Universe</div>
 
 </div>
 
@@ -1234,7 +1497,7 @@ const isMobile = window.innerWidth <= 820 || ('ontouchstart' in window && window
   const c = document.getElementById('starfield');
   const ctx = c.getContext('2d');
   let stars = [];
-  const N = isMobile ? 200 : 550;
+  const N = isMobile ? 300 : 850;
   const HUES = [210, 230, 195, 40, 175, 280, 200, 35, 260, 160, 220, 50];
 
   function resize() {
@@ -1333,7 +1596,7 @@ function drawConnections() {
       glow.setAttribute('d', d);
       glow.setAttribute('fill', 'none');
       glow.setAttribute('stroke', colors[i].glow);
-      glow.setAttribute('stroke-width', widths[i] * 5);
+      glow.setAttribute('stroke-width', widths[i] * 3);
       glow.setAttribute('stroke-linecap', 'round');
       glow.setAttribute('filter', 'url(#beam-glow-strong)');
       glow.style.opacity = colors[i].glowOp;
@@ -1365,58 +1628,107 @@ function drawConnections() {
     svg.appendChild(line);
   }
 
-  // Individual → Anchor — refined rose/magenta/violet ribbon
+  // Individual → Anchor — simplified rose/magenta ribbon
   ribbonBeam(indB.x, indB.y + 10, ancT.x, ancT.y - 2,
     [
-      { core: 'rgba(244,160,184,0.9)', glow: 'rgba(232,101,138,0.7)', coreOp: '0.7', glowOp: '0.12' },
-      { core: 'rgba(217,70,239,0.7)',  glow: 'rgba(217,70,239,0.5)',  coreOp: '0.5', glowOp: '0.08' },
-      { core: 'rgba(200,140,255,0.6)', glow: 'rgba(155,114,207,0.5)', coreOp: '0.4', glowOp: '0.06' }
+      { core: 'rgba(244,160,184,0.85)', glow: 'rgba(232,101,138,0.5)', coreOp: '0.65', glowOp: '0.08' },
+      { core: 'rgba(217,70,239,0.6)',  glow: 'rgba(217,70,239,0.35)',  coreOp: '0.4', glowOp: '0.05' }
     ],
-    [1.6, 1.0, 0.65],
-    [0, 2, -2]
+    [1.4, 0.7],
+    [0, 2]
   );
 
-  // Individual → Network — refined cyan/teal/green ribbon
+  // Individual → Network — simplified cyan/teal ribbon
   ribbonBeam(indB.x, indB.y + 10, netT.x, netT.y - 2,
     [
-      { core: 'rgba(142,232,226,0.9)', glow: 'rgba(78,205,196,0.7)',  coreOp: '0.7', glowOp: '0.12' },
-      { core: 'rgba(34,197,120,0.7)',  glow: 'rgba(34,197,120,0.5)',  coreOp: '0.5', glowOp: '0.08' },
-      { core: 'rgba(91,155,213,0.6)',  glow: 'rgba(91,155,213,0.5)',  coreOp: '0.4', glowOp: '0.06' }
+      { core: 'rgba(142,232,226,0.85)', glow: 'rgba(78,205,196,0.5)',  coreOp: '0.65', glowOp: '0.08' },
+      { core: 'rgba(34,197,120,0.6)',  glow: 'rgba(34,197,120,0.35)',  coreOp: '0.4', glowOp: '0.05' }
     ],
-    [1.6, 1.0, 0.65],
-    [0, -2, 2]
+    [1.4, 0.7],
+    [0, -2]
   );
 
-  // Anchor → Hub — elegant violet/magenta/amber convergence ribbon
+  // Anchor → Hub — cleaner violet/magenta convergence
   const ancBtm = { x: ancC.x, y: ancC.y + anchorEl.offsetHeight / 2 + 4 };
   ribbonBeam(ancBtm.x, ancBtm.y, hubT.x - 16, hubT.y - 2,
     [
-      { core: 'rgba(220,180,255,0.95)', glow: 'rgba(180,130,255,0.8)', coreOp: '0.8', glowOp: '0.24' },
-      { core: 'rgba(217,70,239,0.8)',   glow: 'rgba(217,70,239,0.6)',  coreOp: '0.6', glowOp: '0.17' },
-      { core: 'rgba(232,101,138,0.6)',  glow: 'rgba(232,101,138,0.5)', coreOp: '0.5', glowOp: '0.12' },
-      { core: 'rgba(245,166,35,0.4)',   glow: 'rgba(245,166,35,0.4)',  coreOp: '0.35', glowOp: '0.08' },
-      { core: 'rgba(78,205,196,0.35)',  glow: 'rgba(78,205,196,0.4)',  coreOp: '0.3', glowOp: '0.06' }
+      { core: 'rgba(220,180,255,0.9)', glow: 'rgba(180,130,255,0.5)', coreOp: '0.7', glowOp: '0.14' },
+      { core: 'rgba(217,70,239,0.7)',  glow: 'rgba(217,70,239,0.4)',  coreOp: '0.5', glowOp: '0.08' },
+      { core: 'rgba(245,166,35,0.4)', glow: 'rgba(245,166,35,0.3)',  coreOp: '0.3', glowOp: '0.05' }
     ],
-    [2.8, 1.8, 1.2, 0.8, 0.5],
-    [0, 5, -5, 9, -9]
+    [2.2, 1.2, 0.6],
+    [0, 4, -4]
   );
 
-  // Network → Hub — elegant violet/cyan/amber convergence ribbon
+  // Network → Hub — cleaner violet/cyan convergence
   const netBtm = { x: netC.x, y: netC.y + networkEl.offsetHeight / 2 + 4 };
   ribbonBeam(netBtm.x, netBtm.y, hubT.x + 16, hubT.y - 2,
     [
-      { core: 'rgba(220,180,255,0.95)', glow: 'rgba(180,130,255,0.8)', coreOp: '0.8', glowOp: '0.24' },
-      { core: 'rgba(78,205,196,0.8)',   glow: 'rgba(78,205,196,0.6)',  coreOp: '0.6', glowOp: '0.17' },
-      { core: 'rgba(34,197,120,0.6)',   glow: 'rgba(34,197,120,0.5)',  coreOp: '0.5', glowOp: '0.12' },
-      { core: 'rgba(245,166,35,0.4)',   glow: 'rgba(245,166,35,0.4)',  coreOp: '0.35', glowOp: '0.08' },
-      { core: 'rgba(217,70,239,0.35)',  glow: 'rgba(217,70,239,0.4)',  coreOp: '0.3', glowOp: '0.06' }
+      { core: 'rgba(220,180,255,0.9)', glow: 'rgba(180,130,255,0.5)', coreOp: '0.7', glowOp: '0.14' },
+      { core: 'rgba(78,205,196,0.7)',  glow: 'rgba(78,205,196,0.4)',  coreOp: '0.5', glowOp: '0.08' },
+      { core: 'rgba(245,166,35,0.4)', glow: 'rgba(245,166,35,0.3)',  coreOp: '0.3', glowOp: '0.05' }
     ],
-    [2.8, 1.8, 1.2, 0.8, 0.5],
-    [0, -5, 5, -9, 9]
+    [2.2, 1.2, 0.6],
+    [0, -4, 4]
   );
 
   // Hub → Governance (subtle dashed)
   dashedBeam(hubB.x, hubB.y + 2, govT.x, govT.y - 2, 'rgba(91,155,213,0.4)');
+
+  // Governance → Founding Executive Council
+  const councilEl = document.getElementById('zone-council');
+  if (councilEl) {
+    const govB = bottom(govEl);
+    const cncT = top_(councilEl);
+    const cncC = center(councilEl);
+
+    // Governance → Council (amber/gold ribbon)
+    ribbonBeam(govB.x, govB.y + 2, cncT.x, cncT.y - 2,
+      [
+        { core: 'rgba(245,200,100,0.8)', glow: 'rgba(245,180,70,0.6)', coreOp: '0.6', glowOp: '0.14' },
+        { core: 'rgba(91,155,213,0.5)', glow: 'rgba(91,155,213,0.4)', coreOp: '0.4', glowOp: '0.08' }
+      ],
+      [1.4, 0.7],
+      [0, 0]
+    );
+
+    // Fan 3 beams to the 3 council cards
+    const cards = councilEl.querySelectorAll('.council-card');
+    if (cards.length === 3) {
+      const ecoRect = document.querySelector('.eco-map').getBoundingClientRect();
+      const colors = [
+        { core: 'rgba(91,155,213,0.85)',  glow: 'rgba(91,155,213,0.6)',  coreOp: '0.65', glowOp: '0.12' },
+        { core: 'rgba(78,205,196,0.85)',  glow: 'rgba(78,205,196,0.6)',  coreOp: '0.65', glowOp: '0.12' },
+        { core: 'rgba(217,70,239,0.85)',  glow: 'rgba(217,70,239,0.6)',  coreOp: '0.65', glowOp: '0.12' }
+      ];
+      cards.forEach((card, i) => {
+        const cr = card.getBoundingClientRect();
+        const tx = cr.left - ecoRect.left + cr.width / 2;
+        const ty = cr.top - ecoRect.top;
+        ribbonBeam(cncC.x, cncT.y + 16, tx, ty,
+          [colors[i]],
+          [1.0],
+          [0]
+        );
+      });
+    }
+
+    // Founding Executive Council → The People
+    const peopleEl = document.getElementById('zone-people');
+    if (peopleEl) {
+      const pplT = top_(peopleEl);
+      const encB = bottom(councilEl);
+      ribbonBeam(encB.x, encB.y + 2, pplT.x, pplT.y - 12,
+        [
+          { core: 'rgba(78,205,196,0.8)', glow: 'rgba(78,205,196,0.5)', coreOp: '0.6', glowOp: '0.1' },
+          { core: 'rgba(217,70,239,0.7)', glow: 'rgba(217,70,239,0.4)', coreOp: '0.5', glowOp: '0.08' },
+          { core: 'rgba(91,155,213,0.6)', glow: 'rgba(91,155,213,0.3)', coreOp: '0.4', glowOp: '0.05' }
+        ],
+        [2.0, 1.2, 0.6],
+        [0, 3, -3]
+      );
+    }
+  }
 }
 
 // ── Painted Nebula Canvas — organic cosmic depth layer ──
