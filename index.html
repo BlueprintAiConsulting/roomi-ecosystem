@@ -1026,6 +1026,8 @@
       .council-role { font-size: 0.62rem; }
       .council-support .cs-name { font-size: 0.58rem; }
       .council-support .cs-role { font-size: 0.50rem; }
+      .council-avatar { width: 44px; height: 44px; }
+      .council-support .council-avatar { width: 28px; height: 28px; }
       .tier-individual { margin-bottom: 60px; }
       .tier-individual::before { width: 300px; height: 150px; }
       .hub-zone { margin: 0 0 60px; }
@@ -1033,6 +1035,8 @@
       .legend { margin-top: 48px; gap: 12px; padding: 8px 14px; }
       .leg { font-size: 0.65rem; }
       .footer { font-size: 0.70rem; }
+      /* Faster mobile taps */
+      button, a, .nav-link, .council-card, .wing { touch-action: manipulation; }
     }
 
     @media (max-width: 520px) {
@@ -1066,6 +1070,9 @@
       .council-role { font-size: 0.70rem; }
       .council-support .cs-name { font-size: 0.65rem; }
       .council-support .cs-role { font-size: 0.58rem; }
+      .council-avatar { width: 48px; height: 48px; }
+      .council-avatar .avatar-fallback { font-size: 0.85rem; }
+      .council-support .council-avatar { width: 30px; height: 30px; }
       .gov-divider .label { font-size: 0.58rem; }
       .council-divider .label { font-size: 0.58rem; }
       .wing { padding: 16px 14px 12px; }
@@ -1085,6 +1092,8 @@
       .b-name { font-size: 0.56rem; }
       .b-role { font-size: 0.46rem; }
       .b-icon { width: 28px; height: 28px; border-radius: 6px; }
+      .council-avatar { width: 40px; height: 40px; }
+      .council-support .council-avatar { width: 24px; height: 24px; }
     }
 
     /* ── Mobile Performance — kill GPU-expensive effects ── */
