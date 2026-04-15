@@ -899,7 +899,7 @@
     }
     .council-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
     .council-card {
@@ -1512,13 +1512,20 @@
         </div>
       </div>
       <div class="council-card">
-        <div class="council-avatar av-cassie">C</div>
+        <div class="council-avatar av-cassie">
+          <img src="headshots/cassie.jpg" alt="Cassie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="avatar-fallback" style="display:none">C</span>
+        </div>
         <div class="council-name">Cassie</div>
         <div class="council-role">Creative Chair</div>
-        <div class="council-support">
-          <div class="cs-name">Alyssa</div>
-          <div class="cs-role">Creative Support</div>
+      </div>
+      <div class="council-card">
+        <div class="council-avatar av-alyssa">
+          <img src="headshots/alyssa.jpg" alt="Alyssa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="avatar-fallback" style="display:none">A</span>
         </div>
+        <div class="council-name">Alyssa</div>
+        <div class="council-role">Creative Support</div>
       </div>
     </div>
   </div>
